@@ -1,0 +1,26 @@
+{
+ "browser_action": {
+	 "default_icon": "icon-128.png",
+	 "default_title": "LeadPages™ Builder Keys Binder"
+ },
+ "name": "LeadPpages™ Builder Keys Binder",
+ "description": "Speed up hiding showing elements using keyboard shortcuts inside the LeadPages™ Builder",
+ "homepage_url": "https://github.com/LeadPages/LeadPagesBuilderBookmarklet",
+ "icons": {
+     "16": "icon-16.png",
+     "48": "icon-48.png",
+     "128": "icon-128.png" },
+ "permissions": [
+ 	"activeTab",
+    "https://my.leadpagestest.net/*"
+ ],
+"content_scripts" : [{
+	 "matches": [
+	 	"https://my.leadpagestest.net/page/*/edit/",
+	 	"https://my.leadpages.net/page/*/edit/"
+	 ],
+	 "js": ["bookmarklet.js"]
+}],
+ "version": "1.0",
+ "manifest_version": 2
+}
