@@ -12,7 +12,7 @@
      "128": "icon-128.png" },
  "permissions": [
  	"activeTab",
-    "https://my.leadpagestest.net/*"
+    "https://my.leadpagestest.net/*",
     "https://my.leadpages.net/*"
  ],
 "content_scripts" : [{
@@ -20,7 +20,7 @@
 	 	"https://my.leadpagestest.net/page/*/edit/",
 	 	"https://my.leadpages.net/page/*/edit/"
 	 ],
-	 "js": ["bookmarklet.js"]
+	 "js": ["keysbinder.js"]
 }],
  "version": "1.0",
  "manifest_version": 2

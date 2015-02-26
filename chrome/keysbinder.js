@@ -1,7 +1,7 @@
 var checkInterval;
 
 checkInterval = setInterval(function(){
-	if(window.App !== 'undefined'){
+	if(!document.getElementsByClassName('still-loading').length){
 		var el = document.createElement('script');
 		el.setAttribute('src', 'https://cdn.rawgit.com/LeadPages/LeadPagesBuilderBookmarklet/master/builderKeybinding.js');
 		document.head.appendChild(el);
