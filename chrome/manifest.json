@@ -1,27 +1,39 @@
 {
- "browser_action": {
-	 "default_icon": "icon-128.png",
-	 "default_title": "LeadPages™ Builder Key Binder"
- },
- "name": "LeadPages™ Builder Key Binder",
- "description": "Speed up hiding showing elements using keyboard shortcuts inside the LeadPages™ Builder",
- "homepage_url": "https://github.com/LeadPages/LeadPagesBuilderKeysBinder-BrowserExtensions",
- "icons": {
-     "16": "icon-16.png",
-     "48": "icon-48.png",
-     "128": "icon-128.png" },
- "permissions": [
- 	"activeTab",
-    "https://my.leadpagestest.net/*",
-    "https://my.leadpages.net/*"
- ],
-"content_scripts" : [{
-	 "matches": [
-	 	"https://my.leadpagestest.net/page/*/edit/",
-	 	"https://my.leadpages.net/page/*/edit/"
-	 ],
-	 "js": ["keysbinder.js"]
-}],
- "version": "1.0",
- "manifest_version": 2
+    "background": {
+        "scripts": ["event.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_icon": "icon-128.png",
+        "default_title": "LeadPages\u2122 Builder Key Binder"
+    },
+    "name": "LeadPages\u2122 Builder Key Binder",
+    "description": "Speed up hiding showing elements using keyboard shortcuts inside the LeadPages\u2122 Builder",
+    "homepage_url": "https://github.com/LeadPages/LeadPagesBuilderKeysBinder-BrowserExtensions",
+    "icons": {
+        "16": "icon-16.png",
+        "48": "icon-48.png",
+        "128": "icon-128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "https://my.leadpagestest.net/*",
+        "https://my.leadpages.net/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://my.leadpages.net/page/*/edit/",
+                "https://my.leadpages.net/template/*/new-page/",
+                "https://my.leadpagestest.net/template/*/new-page/",
+                "https://my.leadpagestest.net/page/*/edit/"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "version": "1.0",
+    "manifest_version": 2
 }
