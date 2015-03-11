@@ -25,7 +25,6 @@ var keybinder = {
 			localStorage["keystatus"] = state;
 		}
 		chrome.browserAction.setBadgeText({text: state});
-		this.sendStatus();
 	}
 };
 
