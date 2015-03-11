@@ -10,15 +10,15 @@ if (!chrome.runtime) {
 var keystatus;
 
 //Ask background script for the initial/previously set state
-chrome.runtime.sendMessage({currentStatus: localStorage["keystatus"]}, function(response) {
-  keystatus = response.status
-  localStorage["keystatus"] = keystatus;
+chrome.runtime.sendMessage({currentStatus: localStorage['keystatus']}, function(response) {
+  keystatus = response.status;
+  localStorage['keystatus'] = keystatus;
 });
 
 //Get toggled/clicked state from background
-chrome.runtime.onMessage.addListener(function(msg, _, sendResponse) {
+chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
 	keystatus = msg.status;
-	localStorage["keystatus"] = keystatus;
+	localStorage['keystatus'] = keystatus;
 });
 
 var checkInterval = setInterval(function(){
