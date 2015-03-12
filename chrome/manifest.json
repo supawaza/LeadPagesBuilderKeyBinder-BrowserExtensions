@@ -25,8 +25,8 @@
         {
             "matches": [
                 "https://my.leadpages.net/page/*/edit/",
-                "https://my.leadpages.net/template/*/new-page/",
-                "https://my.leadpagestest.net/template/*/new-page/",
+                "https://my.leadpages.net/template/*/new-page/*",
+                "https://my.leadpagestest.net/template/*/new-page/*",
                 "https://my.leadpagestest.net/page/*/edit/"
             ],
             "js": [
