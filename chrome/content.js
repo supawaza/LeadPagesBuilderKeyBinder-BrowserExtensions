@@ -9,12 +9,21 @@ if (!chrome.runtime) {
 
 var keystatus;
 
-chrome.runtime.onMessage.addListener(function(msg, _, sendResponse) {
+//Ask background script for the initial/previously set state
+chrome.runtime.sendMessage({currentStatus: localStorage['keystatus']}, function(response) {
+  keystatus = response.status;
+  localStorage['keystatus'] = keystatus;
+});
+
+//Get toggled/clicked state from background
+chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
 	keystatus = msg.status;
+	localStorage['keystatus'] = keystatus;
 });
 
 var checkInterval = setInterval(function(){
 
+	//Make sure the builder finished loading
 	if(!document.getElementsByClassName('still-loading').length && keystatus == 'ON'){
 		var el = document.createElement('script');
 		el.setAttribute('src', 'https://cdn.rawgit.com/LeadPages/LeadPagesBuilderBookmarklet/master/builderKeybinding.js');
