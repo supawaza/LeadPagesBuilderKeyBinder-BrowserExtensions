@@ -40,10 +40,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	//Grab the currently opened LeadPages
 	chrome.tabs.query({
 		url: [
-			'https://my.leadpages.net/page/*/edit/',
-			'https://my.leadpages.net/template/*/new-page/',
-			'https://my.leadpagestest.net/template/*/new-page/',
-			'https://my.leadpagestest.net/page/*/edit/'
+			"https://my.leadpages.net/page/*/edit/",
+			"https://my.leadpages.net/template/*/new-page/*",
+			"https://my.leadpagestest.net/template/*/new-page/*",
+			"https://my.leadpagestest.net/page/*/edit/"
 		]
 	}, function(tabs){
 
@@ -55,7 +55,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 				keybinder.sendStatus(leadpage.id);
 			}, 1000);
 		} else {
-			keybinder.sendStatus(-1);
+			keybinder.sendStatus();
 		}
 	});
 });
