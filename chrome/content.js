@@ -26,7 +26,7 @@ var checkInterval = setInterval(function(){
 	//Make sure the builder finished loading
 	if(!document.getElementsByClassName('still-loading').length && keystatus == 'ON'){
 		var el = document.createElement('script');
-		el.setAttribute('src', 'https://cdn.rawgit.com/supawaza/LeadPagesBuilderBookmarklet/extensions/builderKeybinding.js');
+		el.setAttribute('src', 'https://cdn.rawgit.com/LeadPages/LeadPagesBuilderBookmarklet/master/builderKeybinding.js');
 		document.head.appendChild(el);
 
 		clearInterval(checkInterval);
